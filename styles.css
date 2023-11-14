@@ -43,6 +43,10 @@ body {
     line-height: 1.5;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
@@ -63,6 +67,15 @@ select {
     font: inherit;
 }
 
+a:link, a:visited {
+    color: #000; /* change this to your desired color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000; /* change this to your desired color for hover state */
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
@@ -79,10 +92,12 @@ select {
     }
 }
 
-.heading-container h1 {
+nav, a {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    margin: 1rem;
+    margin: 0.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
 }
 
 .hero-image {
@@ -103,17 +118,28 @@ select {
     transform: translate(-50%, -50%);
     color: white;
 }
-.hero-text h2{
+
+.hero-text h2 {
     margin-bottom: 2rem;
 }
 
-.hero-text button{
+.hero-text button {
     width: 10rem;
     border-radius: 4rem;
     border: none;
     background-color: salmon;
     font-weight: 500;
 }
+
+button {
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.2);
+    border-radius: 0.2rem;
+}
+
 
 .recipe-title {
     display: block;
@@ -127,22 +153,37 @@ select {
     gap: 5rem;
     margin: 4rem;
     justify-content: center;
+    text-decoration: none;
+}
+.item {
+    transition: transform 0.3s ease-in-out;
 }
 
-.main-recipe-container h4{
+.item:hover {
+    transform: scale(1.2);
+}
+
+.main-recipe-container a {
+    text-decoration: none;
+}
+
+.main-recipe-container h4 {
     text-align: center;
     font-size: 1.2rem;
 }
 
-.main-recipe-container img{
+.main-recipe-container img {
     border-radius: 4rem 0.5rem;
-    border: 0.3rem solid salmon ;
+    border: 0.3rem solid salmon;
 }
 
-.main-recipe-container p{
+.main-recipe-container p {
     padding-top: 0.5rem;
+    padding-left: 0.5rem;
     font-weight: 0;
     font-size: 0.8rem;
+    text-decoration: none;
+    text-align: left;
 }
 
 footer {
@@ -151,4 +192,18 @@ footer {
     padding: 2rem;
     color: white;
     background-color: black;
+}
+
+.recipe-container {
+    display: flex;
+    gap: 5rem;
+    margin: 4rem;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    height: 71.5vh;
+}
+
+.recipe-info {
+    text-align: left;
 }
